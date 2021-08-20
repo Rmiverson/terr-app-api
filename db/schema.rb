@@ -55,7 +55,7 @@ ActiveRecord::Schema.define(version: 2021_08_20_202151) do
     t.string "username"
     t.string "password_digest"
     t.string "email"
-    t.string "role"
+    t.integer "role"
     t.string "first_name"
     t.string "last_name"
     t.boolean "baptized"
