@@ -1,4 +1,4 @@
-class AddressController < ApplicationController
+class Api::V1::AddressController < ApplicationController
    def index
       addresses = Address.all
       render json: AddressSerializer.new(addresses).serialized_json

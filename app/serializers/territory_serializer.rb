@@ -18,6 +18,6 @@ class TerritorySerializer < ActiveModel::Serializer
       except: [:created_at, :updated_at]
     }
 
-    @territory.to_json(optinos)
+    @territory.to_json(options)
   end
 end
