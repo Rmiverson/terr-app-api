@@ -11,6 +11,7 @@ class CreateAddresses < ActiveRecord::Migration[6.1]
       t.float :latitude
       t.float :longitude
       t.timestamps
+      t.references :territory, null: false, foreign_key: true
     end
   end
 end

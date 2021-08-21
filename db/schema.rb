@@ -27,6 +27,8 @@ ActiveRecord::Schema.define(version: 2021_08_20_202151) do
     t.float "longitude"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "territory_id", null: false
+    t.index ["territory_id"], name: "index_addresses_on_territory_id"
   end
 
   create_table "checkouts", force: :cascade do |t|
@@ -42,7 +44,7 @@ ActiveRecord::Schema.define(version: 2021_08_20_202151) do
 
   create_table "territories", force: :cascade do |t|
     t.integer "number"
-    t.string "type"
+    t.integer "territory_type"
     t.string "name"
     t.datetime "last_audited"
     t.datetime "last_worked"
@@ -65,6 +67,7 @@ ActiveRecord::Schema.define(version: 2021_08_20_202151) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "addresses", "territories"
   add_foreign_key "checkouts", "territories"
   add_foreign_key "checkouts", "users"
 end
