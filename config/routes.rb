@@ -6,6 +6,10 @@ Rails.application.routes.draw do
       resources :territory, only: [:index, :show]
       resources :checkout, only: [:index, :show]
       resources :address, only: [:index, :show]
+
+      post '/signup', to: 'users#create'
+      post '/login', to: 'auth#create'
+      get '/persist', to: 'auth#show'
     end
   end
 end
