@@ -7,8 +7,9 @@ class Api::V1::AuthController < ApplicationController
       if user && user.authenticate(params[:password])
          my_token = encode_token({user_id: user.id})
          render json: UserSerializer.new(user).serialized_json(my_token), status: 200
+         # render json: { user: UserSerializer.new(user), token: my_token}, status: 200
       else
-         render {error: 'That user could not be found.'}, status: 401
+         render json: {error: 'That user could not be found.'}, status: 401
       end
    end
 

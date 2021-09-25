@@ -1,4 +1,4 @@
-class Api::V1::CheckoutController < ApplicationController
+class Api::V1::CheckoutsController < ApplicationController
    def index
       checkouts = Checkout.all
       render json: checkouts.to_json
