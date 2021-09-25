@@ -1,4 +1,4 @@
-class Api::V1::TerritoryController < ApplicationController
+class Api::V1::TerritoriesController < ApplicationController
    def index
       territories = Territory.all
       render json: TerritorySerializer.new(territories).serialized_json

@@ -17,6 +17,8 @@ class UserSerializer < ActiveModel::Serializer
       },
       except: [:password_digest, :created_at, :updated_at]
     }
-    data = @user.to_json(options)
+    pre_merge = @user.to_json(options)
+    hash_data = JSON.parse(pre_merge)
+    data = hash_data.merge!(token: token).to_json
   end
 end
