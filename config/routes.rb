@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :user, only: [:index, :show, :create]
-      resources :territory, only: [:index, :show]
+      resources :territories, only: [:index, :show]
       resources :checkout, only: [:index, :show]
       resources :address, only: [:index, :show]
 
